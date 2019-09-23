@@ -1,16 +1,12 @@
 import os
+from litmus import Router, rest_controller, render
 
-from flask import Flask
+from message_service import MessageService
+app = Router()
 
-from providers_wrapper import ProvidersWrapper
+message_service = rest_controller(MessageService)
+app.add_route('/', controller=message_service)
 
-def create_app(test_config=None):
-    # create and configure the app
-    app = Flask(__name__, instance_relative_config=True)
-
-    @app.route('/nexmo')
-    def nexmo():
-        res = ProvidersWrapper.call_nexmo()
-        return res
-
-    return app
+if __name__ == '__main__':
+    from paste import httpserver
+    httpserver.serve(app, host='127.0.0.1', port=8000)
