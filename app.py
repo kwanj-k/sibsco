@@ -1,5 +1,5 @@
 import os
-from litmus import Router, rest_controller, render
+from litmus import Router, rest_controller
 
 from message_service import MessageService
 app = Router()
