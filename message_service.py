@@ -2,7 +2,6 @@ import json
 import queue
 from threading import Thread
 
-from litmus import render
 from providers import ProvidersWrapper
 
 
