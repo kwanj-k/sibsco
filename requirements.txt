@@ -5,7 +5,7 @@ certifi==2019.9.11
 cffi==1.12.3
 chardet==3.0.4
 contextlib2==0.5.5
-cryptography==2.7
+cryptography==3.2
 gunicorn==19.9.0
 idna==2.8
 nexmo==2.4.0
